@@ -79,7 +79,7 @@ resource "aws_launch_configuration" "consul" {
 }
 
 module "consul_lb_aws" {
-  source = "github.com/hashicorp-modules/consul-lb-aws"
+  source = "github.com/aedalton/consul-lb-aws"
 
   create             = "${var.create}"
   name               = "${var.name}"
