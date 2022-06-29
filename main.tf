@@ -105,9 +105,9 @@ resource "aws_autoscaling_group" "consul" {
   name_prefix          = "${aws_launch_configuration.consul.name}"
   launch_configuration = "${aws_launch_configuration.consul.id}"
   vpc_zone_identifier  = ["${var.subnet_ids}"]
-  max_size             = "${var.count != -1 ? var.count : length(var.subnet_ids)}"
-  min_size             = "${var.count != -1 ? var.count : length(var.subnet_ids)}"
-  desired_capacity     = "${var.count != -1 ? var.count : length(var.subnet_ids)}"
+  max_size             = "${var.consul_count != -1 ? var.consul_count : length(var.subnet_ids)}"
+  min_size             = "${var.consul_count != -1 ? var.consul_count : length(var.subnet_ids)}"
+  desired_capacity     = "${var.consul_count != -1 ? var.consul_count : length(var.subnet_ids)}"
   default_cooldown     = 30
   force_delete         = true
 
